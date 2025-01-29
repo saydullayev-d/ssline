@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSLine Web-Dev</title>
+  <link rel="stylesheet" href="./dev-po.css">
+  <link rel="stylesheet" href="./dev-po-media.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="/header-footer/header-footer.css">
+  <link rel="stylesheet" href="/header-footer/header-footer-media.css">
+  <link rel="stylesheet" href="/font/font.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="/index.html">
+        <svg width="150" height="80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <!-- Иконка программирования (фигурные скобки) -->
+          <text x="10" y="50" font-family="monospace" font-size="40" fill="#4A90E2">
+            <!-- Левая фигурная скобка -->
+            <tspan opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0s" fill="freeze" />
+              {
+            </tspan>
+            <!-- Внутри скобок добавляем символы, связанные с программированием -->
+            <tspan x="25" y="45" font-size="20" fill="#FF6F61" opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.5s" fill="freeze" />
+              &lt;/&gt;
+            </tspan>
+            <!-- Правая фигурная скобка -->
+            <tspan x="53" y="50" opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1s" fill="freeze" />
+              }
+            </tspan>
+          </text>
+
+          <!-- Текст "Sam Soft Line" -->
+          <text x="75" y="27" font-family="'Roboto', sans-serif" font-size="20" fill="#555">
+            <tspan opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.5s" fill="freeze" />
+              <tspan fill="#4A90E2">S</tspan>am
+            </tspan>
+          </text>
+          <text x="80" y="47" font-family="'Roboto', sans-serif" font-size="20" fill="#555">
+            <tspan opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.7s" fill="freeze" />
+              <tspan fill="#4A90E2">S</tspan>oft
+            </tspan>
+          </text>
+          <text x="85" y="67" font-family="'Roboto', sans-serif" font-size="20" fill="#555">
+            <tspan opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.9s" fill="freeze" />
+              <tspan fill="#4A90E2">L</tspan>ine
+            </tspan>
+          </text>
+        </svg>
+      </a>
+      <div class="burger-menu" onclick="toggleMobileMenu()">
+        <img src="/img/burger.svg" class="bi bi-list">
+      </div>
+      <nav class="nav-menu">
+        <div class="nav-item no-select">
+          <div class="nav-item-link">Услуги</div>
+          <div class="dropdown">
+            <a href="/services/web-dev/web.html" class="dropdown-item">Веб-разработка</a>
+            <a href="/services/mob-dev/mob.html" class="dropdown-item">Мобильные приложения</a>
+            <a href="/services/PO-dev/dev-po.html" class="dropdown-item">Разработка ПО</a>
+            <a href="/services/ui/ui.html" class="dropdown-item">UX/UI Дизайн</a>
+          </div>
+        </div>
+
+        <div class="nav-item no-select">
+          <div class="nav-item-link">Портфолио</div>
+          <div class="dropdown">
+            <a href="" class="dropdown-item">Кейсы</a>
+            <a href="/resourse/project/project.html" class="dropdown-item">Проекты</a>
+            <a href="/resourse/achivments/achvments.html" class="dropdown-item">Достижения</a>
+          </div>
+        </div>
+
+        <div class="nav-item no-select">
+          <div class="nav-item-link">Решения</div>
+          <!-- <div class="dropdown">
+          </div> -->
+        </div>
+
+        <div class="nav-item no-select">
+          <div class="nav-item-link">Команда</div>
+          <div class="dropdown">
+            <a href="/aboutCompany/aboutus/aboutUs.html" class="dropdown-item">О нас</a>
+            <a href="/aboutCompany/careers/careers.html" class="dropdown-item">Вакансии</a>
+          </div>
+        </div>
+
+        <div class="mobile-menu-actions">
+          <a href="#" class="btn btn-primary mobile-request-btn">Оставить заявку</a>
+          <a href="#" class="btn btn-secondary login-btn mobile-login-btn">Войти</a>
+        </div>
+      </nav>
+
+      <div class="action-buttons">
+        <a href="#" id="contactBtnn" class="btn btn-primary">Оставить заявку</a>
+        <a href="#" class="btn btn-secondary login-btn">Войти</a>
+      </div>
+    </div>
+
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Вход</h2>
+        <form id="login-form">
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Пароль" required>
+          <button type="submit" class="btn btn-primary">Войти</button>
+          <p>Нет аккаунта? <a href="#" class="register-link">Регистрация</a></p>
+        </form>
+      </div>
+    </div>
+
+    <div id="requestModal" class="request-modal">
+      <div class="request-modal-content">
+        <span class="request-modal-close">&times;</span>
+        <form class="request-form">
+          <h2>Оставьте заявку</h2>
+          <input type="text" placeholder="Ваше имя" required>
+          <input type="email" placeholder="Ваш email" required>
+          <textarea style="resize: none;" placeholder="Ваше сообщение" rows="4" required></textarea>
+          <button type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="first">
+      <div class="container hero">
+        <div class="floating-element floating-element-1"></div>
+        <div class="floating-element floating-element-2"></div>
+
+        <div class="hero-content">
+          <h1 class="hero-title">Разработка программного обеспечения</h1>
+          <p class="hero-subtitle">Создаем инновационные программные решения для цифровой трансформации вашего бизнеса</p>
+
+          <div class="hero-actions">
+            <a href="#" class="btn btn-primary" onclick="document.querySelector('.contact-modal').style.display='flex';">
+              Заказать разработку
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="contact-modal">
+      <div class="contact-modal-content">
+        <button class="contact-modal-close" onclick="closeModal()">&times;</button>
+        <form class="contact-form" onsubmit="alert('Заявка отправлена!'); closeModal(); return false;">
+          <input type="text" placeholder="Ваше имя" required>
+          <input type="tel" placeholder="Телефон" required>
+          <textarea style="resize: none;" placeholder="Опишите ваш проект" rows="4" required></textarea>
+          <button type="submit">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+
+    <section class="services">
+      <div class="container">
+        <div class="services-content">
+          <h2 class="services-title">Наши услуги</h2>
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-icon">💻</div>
+              <h3 class="service-title">Десктопные приложения</h3>
+              <p class="service-description">Разработка мощных настольных приложений для Windows, macOS и Linux</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">🔧</div>
+              <h3 class="service-title">Корпоративные системы</h3>
+              <p class="service-description">Создание комплексных решений для автоматизации бизнес-процессов</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">🛡️</div>
+              <h3 class="service-title">Поддержка и сопровождение</h3>
+              <p class="service-description">Техническая поддержка, обновления и масштабирование существующих систем</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="three">
+      <div class="container">
+        <h2 class="advantages-title">Преимущества нашей разработки</h2>
+
+        <div class="advantages">
+          <div class="advantage-section">
+            <div class="advantage-content">
+              <h3>Современные технологии</h3>
+              <p>Используем передовые технологии и фреймворки: .NET, Java, Python, React, Angular. Это обеспечивает высокую производительность и масштабируемость решений.</p>
+            </div>
+          </div>
+
+          <div class="advantage-section">
+            <div class="advantage-content">
+              <h3>Безопасность</h3>
+              <p>Внедряем многоуровневую защиту данных, соблюдаем международные стандарты безопасности и проводим регулярное тестирование на уязвимости.</p>
+            </div>
+          </div>
+
+          <div class="advantage-section">
+            <div class="advantage-content">
+              <h3>Гибкая методология</h3>
+              <p>Применяем Agile-подход, обеспечивая прозрачность разработки и возможность вносить изменения на любом этапе проекта.</p>
+            </div>
+          </div>
+
+          <div class="advantage-section">
+            <div class="advantage-content">
+              <h3>Техническая поддержка</h3>
+              <p>Предоставляем круглосуточную поддержку, регулярные обновления и оперативное устранение неполадок для бесперебойной работы вашего ПО.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="top-of-mine">
+      <h1>Портфолио программных решений</h1>
+      <p>Инновационное ПО для современного бизнеса</p>
+    </div>
+    <div class="container">
+      <section class="projects">
+        <div class="project-card">
+          <img src="/img/koop.jpg" alt="ERP система" class="project-image">
+          <div class="project-info">
+            <h3 class="project-title">ERP система управления предприятием</h3>
+            <p class="project-description">Комплексная система автоматизации бизнес-процессов для крупной производственной компании</p>
+            <div class="tech-tags">
+              <span class="tech-tag">.NET Core</span>
+              <span class="tech-tag">SQL Server</span>
+              <span class="tech-tag">Angular</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="/img/lending.jpg" alt="CRM система" class="project-image">
+          <div class="project-info">
+            <h3 class="project-title">CRM система для сети клиник</h3>
+            <p class="project-description">Система управления взаимоотношениями с клиентами и автоматизации медицинских процессов</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Spring Boot</span>
+              <span class="tech-tag">PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="/img/2148688560.jpg" alt="Складская система" class="project-image">
+          <div class="project-info">
+            <h3 class="project-title">Система управления складом</h3>
+            <p class="project-description">Автоматизированное решение для управления складскими операциями и логистикой</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Django</span>
+              <span class="tech-tag">Redis</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="/img/last.jpg" alt="Аналитическая платформа" class="project-image">
+          <div class="project-info">
+            <h3 class="project-title">Платформа бизнес-аналитики</h3>
+            <p class="project-description">Система анализа данных и формирования бизнес-отчетности с машинным обучением</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">TensorFlow</span>
+              <span class="tech-tag">Elasticsearch</span>
+              <span class="tech-tag">React</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-top container2">
+      <div class="social-icons">
+        <a href="#" class="telegram"><i class="fab fa-telegram"></i></a>
+        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="contact-info">
+        <a href="tel:+998979191070">Телефон: +998 97 919 10 70</a>
+        <p>Адрес: г. Самарканд, ул. Новая, 15</p>
+        <a href="mailto: jonibek.usa@gmail.com">Email: SSLine@hmail.com</a>
+      </div>
+    </div>
+
+    <div class="footer-content container2">
+      <div class="footer-section">
+        <h4>О Компании</h4>
+        <div class="footer-links">
+          <a href="/aboutCompany/team/team.html">Команда</a>
+          <a href="/aboutCompany/careers/careers.html">Карьера</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Услуги</h4>
+        <div class="footer-links">
+          <a href="/services/web-dev/web.html">Веб-разработка</a>
+          <a href="/services/mob-dev/mob.html">Мобильные приложения</a>
+          <a href="/services/ui/ui.html">UX/UI Дизайн</a>
+          <a href="/services/PO-dev/dev-po.html">Разработка ПО</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Клиентам</h4>
+        <div class="footer-links">
+          <a href="/forClients/FAQ/faq.html">Часто задаваемые вопросы</a>
+          <a href="/forClients/politics/politics.html">Политика конфиденциальности</a>
+          <a href="/forClients/guarentees/guarentees.html">Гарантии</a>
+          <a href="/forClients/feedback/feedback.html">Отзывы</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Ресурсы</h4>
+        <div class="footer-links">
+          <a href="#">Блог</a>
+          <a href="#">Кейсы</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="./dev-po.js"></script>
+  <script src="/header-footer/header.js"></script>
+</body>
+
+</html>

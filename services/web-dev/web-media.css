@@ -1,0 +1,45 @@
+/* Main */
+
+/* Section  1-2*/
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .floating-element{
+    display: none;
+  }
+}
+
+/* Section 3 */
+@media screen and (max-width: 768px) {
+  .advantages-title {
+    font-size: 2rem;
+  }
+
+  .advantage-content {
+    padding: 30px 20px;
+  }
+
+  .advantage-section h3 {
+    font-size: 1.5rem;
+  }
+
+  .advantage-section p {
+    font-size: 1rem;
+  }
+}

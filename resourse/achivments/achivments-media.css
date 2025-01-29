@@ -1,0 +1,28 @@
+@media (max-width: 768px) {
+  .achievements-hero {
+      padding: 40px 20px;
+  }
+
+  .achievements-hero h1 {
+      font-size: 2em;
+  }
+
+  .timeline::after {
+      left: 31px;
+  }
+
+  .timeline-item {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+  }
+
+  .timeline-item.right {
+      left: 0;
+  }
+
+  .timeline-item.left::after,
+  .timeline-item.right::after {
+      left: 21px;
+  }
+}

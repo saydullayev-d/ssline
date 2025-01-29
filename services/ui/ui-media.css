@@ -1,0 +1,46 @@
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .advantages-section {
+    grid-template-columns: 1fr;
+  }
+
+  .advantage-content {
+    padding-right: 0;
+  }
+
+  .process-steps {
+    flex-direction: column;
+  }
+
+  .process-step {
+    margin-bottom: 30px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .contact-section {
+    padding: 40px 20px;
+  }
+
+  .design-hero {
+    padding: 40px 20px;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

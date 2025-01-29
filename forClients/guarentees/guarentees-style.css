@@ -1,0 +1,218 @@
+/* MAIN */
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #2c3e50;
+  --accent-color: #e74c3c;
+  --gradient-start: #4a90e2;
+  --gradient-end: #357abd;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 75px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf2 100%);
+  min-height: 100vh;
+  font-family: "Roboto", serif;  color: #333;
+}
+
+.guarantee-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.guarantee-title {
+  font-size: 42px;
+  color: var(--secondary-color);
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.guarantee-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  border-radius: 2px;
+}
+
+.guarantee-section {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 35px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.guarantee-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.guarantee-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
+}
+
+.guarantee-subtitle {
+  font-size: 28px;
+  color: var(--secondary-color);
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #2c3e50;
+}
+
+.guarantee-subtitle::before {
+  content: '★';
+  color: var(--primary-color);
+  font-size: 24px;
+}
+
+.guarantee-text {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #555;
+  font-size: 16px;
+}
+
+.guarantee-text a {
+  text-decoration: none;
+  color: #555;
+}
+
+.guarantee-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.guarantee-list-item {
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease;
+}
+
+.guarantee-list-item:hover {
+  transform: translateX(5px);
+}
+
+.guarantee-list-item:before {
+  content: "✓";
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  font-size: 20px;
+  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.guarantee-contact-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);
+  border-radius: 12px;
+  padding: 30px;
+  margin-top: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.guarantee-contact-button {
+  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.guarantee-contact-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+}
+
+.guarantee-contact-button::after {
+  content: '→';
+  transition: transform 0.3s ease;
+}
+
+.guarantee-contact-button:hover::after {
+  transform: translateX(5px);
+}
+
+.guarantee-collapse-btn {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  text-align: left;
+  display: none;
+  font-size: 18px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.guarantee-collapse-btn:hover {
+  color: var(--gradient-end);
+}
+
+.guarantee-info-box {
+  background: rgba(74, 144, 226, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  border-left: 4px solid var(--primary-color);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.guarantee-support-hours {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 15px;
+  background: rgba(74, 144, 226, 0.1);
+  border-radius: 20px;
+  margin-top: 10px;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.guarantee-support-hours::before {
+  content: '🕒';
+  margin-right: 8px;
+}

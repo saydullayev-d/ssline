@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Гарантийные обязательства SSLine</title>
+  <link rel="stylesheet" href="./guarentees-media.css">
+  <link rel="stylesheet" href="./guarentees-style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="/header-footer/header-footer-media.css">
+  <link rel="stylesheet" href="/header-footer/header-footer.css">
+  <link rel="stylesheet" href="/font/font.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="/index.html">
+        <svg width="150" height="80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <!-- Иконка программирования (фигурные скобки) -->
+          <text x="10" y="50" font-family="monospace" font-size="40" fill="#4A90E2">
+            <!-- Левая фигурная скобка -->
+            <tspan opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0s" fill="freeze" />
+              {
+            </tspan>
+            <!-- Внутри скобок добавляем символы, связанные с программированием -->
+            <tspan x="25" y="45" font-size="20" fill="#FF6F61" opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.5s" fill="freeze" />
+              &lt;/&gt;
+            </tspan>
+            <!-- Правая фигурная скобка -->
+            <tspan x="53" y="50" opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1s" fill="freeze" />
+              }
+            </tspan>
+          </text>
+
+          <!-- Текст "Sam Soft Line" -->
+          <text x="75" y="27" font-family="'Roboto', sans-serif" font-size="20" fill="#555">
+            <tspan opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.5s" fill="freeze" />
+              <tspan fill="#4A90E2">S</tspan>am
+            </tspan>
+          </text>
+          <text x="80" y="47" font-family="'Roboto', sans-serif" font-size="20" fill="#555">
+            <tspan opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.7s" fill="freeze" />
+              <tspan fill="#4A90E2">S</tspan>oft
+            </tspan>
+          </text>
+          <text x="85" y="67" font-family="'Roboto', sans-serif" font-size="20" fill="#555">
+            <tspan opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.9s" fill="freeze" />
+              <tspan fill="#4A90E2">L</tspan>ine
+            </tspan>
+          </text>
+        </svg>
+      </a>
+      <div class="burger-menu" onclick="toggleMobileMenu()">
+        <img src="/img/burger.svg" class="bi bi-list">
+      </div>
+      <nav class="nav-menu">
+        <div class="nav-item no-select">
+          <div class="nav-item-link">Услуги</div>
+          <div class="dropdown">
+            <a href="/services/web-dev/web.html" class="dropdown-item">Веб-разработка</a>
+            <a href="/services/mob-dev/mob.html" class="dropdown-item">Мобильные приложения</a>
+            <a href="/services/PO-dev/dev-po.html" class="dropdown-item">Разработка ПО</a>
+            <a href="/services/ui/ui.html" class="dropdown-item">UX/UI Дизайн</a>
+          </div>
+        </div>
+
+        <div class="nav-item no-select">
+          <div class="nav-item-link">Портфолио</div>
+          <div class="dropdown">
+            <a href="" class="dropdown-item">Кейсы</a>
+            <a href="/resourse/project/project.html" class="dropdown-item">Проекты</a>
+            <a href="/resourse/achivments/achvments.html" class="dropdown-item">Достижения</a>
+          </div>
+        </div>
+
+        <div class="nav-item no-select">
+          <div class="nav-item-link">Решения</div>
+          <!-- <div class="dropdown">
+          </div> -->
+        </div>
+
+        <div class="nav-item no-select">
+          <div class="nav-item-link">Команда</div>
+          <div class="dropdown">
+            <a href="/aboutCompany/aboutus/aboutUs.html" class="dropdown-item">О нас</a>
+            <a href="/aboutCompany/careers/careers.html" class="dropdown-item">Вакансии</a>
+          </div>
+        </div>
+
+        <div class="mobile-menu-actions">
+          <a href="#" class="btn btn-primary mobile-request-btn">Оставить заявку</a>
+          <a href="#" class="btn btn-secondary login-btn mobile-login-btn">Войти</a>
+        </div>
+      </nav>
+
+      <div class="action-buttons">
+        <a href="#" id="contactBtnn" class="btn btn-primary">Оставить заявку</a>
+        <a href="#" class="btn btn-secondary login-btn">Войти</a>
+      </div>
+    </div>
+
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Вход</h2>
+        <form id="login-form">
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Пароль" required>
+          <button type="submit" class="btn btn-primary">Войти</button>
+          <p>Нет аккаунта? <a href="#" class="register-link">Регистрация</a></p>
+        </form>
+      </div>
+    </div>
+
+    <div id="requestModal" class="request-modal">
+      <div class="request-modal-content">
+        <span class="request-modal-close">&times;</span>
+        <form class="request-form">
+          <h2>Оставьте заявку</h2>
+          <input type="text" placeholder="Ваше имя" required>
+          <input type="email" placeholder="Ваш email" required>
+          <textarea style="resize: none;" placeholder="Ваше сообщение" rows="4" required></textarea>
+          <button type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="guarantee-container">
+      <h1 class="guarantee-title">Гарантийные обязательства</h1>
+
+      <div class="guarantee-section">
+        <button class="guarantee-collapse-btn">Общие положения ▼</button>
+        <div class="guarantee-content active">
+          <h2 class="guarantee-subtitle">Общие положения</h2>
+          <div class="guarantee-info-box">
+            <p class="guarantee-text">
+              Данная страница описывает гарантийные обязательства нашей компании на все предоставляемые продукты и
+              услуги.
+              Гарантия действительна только для клиентов, заключивших официальный договор или осуществивших покупку
+              наших
+              услуг.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="guarantee-section">
+        <button class="guarantee-collapse-btn">Срок действия и условия гарантии ▼</button>
+        <div class="guarantee-content active">
+          <h2 class="guarantee-subtitle">Срок действия и условия гарантии</h2>
+          <p class="guarantee-text">
+            Гарантийный срок составляет 12 месяцев с момента приобретения продукта или услуги.
+          </p>
+          <ul class="guarantee-list">
+            <li class="guarantee-list-item">Продукт используется в соответствии с его целевым назначением</li>
+            <li class="guarantee-list-item">Отсутствуют нарушения инструкции по эксплуатации</li>
+            <li class="guarantee-list-item">Сохранены все документы, подтверждающие покупку</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="guarantee-section">
+        <button class="guarantee-collapse-btn">Обязательства компании ▼</button>
+        <div class="guarantee-content active">
+          <h2 class="guarantee-subtitle">Обязательства компании</h2>
+          <p class="guarantee-text">В рамках гарантийного обслуживания мы предоставляем:</p>
+          <ul class="guarantee-list">
+            <li class="guarantee-list-item">Оперативное исправление выявленных ошибок</li>
+            <li class="guarantee-list-item">Замену неисправного продукта или услуги при необходимости</li>
+            <li class="guarantee-list-item">Бесплатную техническую поддержку на протяжении всего гарантийного срока</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="guarantee-section">
+        <button class="guarantee-collapse-btn">Процесс обращения ▼</button>
+        <div class="guarantee-content active">
+          <h2 class="guarantee-subtitle">Процесс обращения</h2>
+          <p class="guarantee-text">Для подачи гарантийного запроса:</p>
+          <ul class="guarantee-list">
+            <li class="guarantee-list-item">Отправьте письмо на электронную почту support@company.com</li>
+            <li class="guarantee-list-item">Заполните контактную форму на нашем сайте</li>
+            <li class="guarantee-list-item">Приложите описание проблемы и документы, подтверждающие покупку</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="guarantee-section">
+        <button class="guarantee-collapse-btn">Контакты для связи ▼</button>
+        <div class="guarantee-content active">
+          <h2 class="guarantee-subtitle">Контакты для связи</h2>
+          <div class="guarantee-contact-card">
+            <p class="guarantee-text"><strong>Email:</strong><a href="mailto: jonibek.usa@gmail.com">
+                jonibek.usa@gmail.com</a></p>
+            <p class="guarantee-text"><strong>Телефон:</strong> <a href="tel: +998979191070">8 (800) 123-45-67</a></p>
+            <div class="guarantee-support-hours">Режим работы: Пн-Сб с 9:00 до 18:00</div>
+            <button class="guarantee-contact-button">
+              Написать в поддержку
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-top container2">
+      <div class="social-icons">
+        <a href="#" class="telegram"><i class="fab fa-telegram"></i></a>
+        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="contact-info">
+        <a href="tel:+998979191070">Телефон: +998 97 919 10 70</a>
+        <p>Адрес: г. Самарканд, ул. Новая, 15</p>
+        <a href="mailto: jonibek.usa@gmail.com">Email: SSLine@hmail.com</a>
+      </div>
+    </div>
+
+    <div class="footer-content container2">
+      <div class="footer-section">
+        <h4>О Компании</h4>
+        <div class="footer-links">
+          <a href="/aboutCompany/team/team.html">Команда</a>
+          <a href="/aboutCompany/careers/careers.html">Карьера</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Услуги</h4>
+        <div class="footer-links">
+          <a href="/services/web-dev/web.html">Веб-разработка</a>
+          <a href="/services/mob-dev/mob.html">Мобильные приложения</a>
+          <a href="/services/ui/ui.html">UX/UI Дизайн</a>
+          <a href="/services/PO-dev/dev-po.html">Разработка ПО</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Клиентам</h4>
+        <div class="footer-links">
+          <a href="/forClients/FAQ/faq.html">Часто задаваемые вопросы</a>
+          <a href="/forClients/politics/politics.html">Политика конфиденциальности</a>
+          <a href="/forClients/guarentees/guarentees.html">Гарантии</a>
+          <a href="/forClients/feedback/feedback.html">Отзывы</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Ресурсы</h4>
+        <div class="footer-links">
+          <a href="#">Блог</a>
+          <a href="#">Кейсы</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="./guarentees.js"></script>
+  <script src="/header-footer/header.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+/* MAIN */
+:root {
+  --primary-color: #2c3e50;
+  --primary-light: #818cf8;
+  --text-color: #1f2937;
+  --bg-color: #f8fafc;
+  --section-bg: #ffffff;
+  --accent-color: #c7d2fe;
+}
+
+body {
+  padding-top: 75px;
+  font-family: "Roboto", serif;
+    line-height: 1.7;
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  background-image:
+    radial-gradient(circle at 100% 100%, var(--accent-color) 0%, transparent 20%),
+    radial-gradient(circle at 0% 0%, var(--accent-color) 0%, transparent 20%);
+  min-height: 100vh;
+}
+
+h1 {
+  color: var(--primary-color);
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  /* Dynamic font sizing */
+  margin-bottom: clamp(1.5rem, 4vw, 3rem);
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(60px, 10vw, 100px);
+  height: clamp(3px, 0.5vw, 4px);
+  background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+  border-radius: 2px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.privacy-section {
+  background: var(--section-bg);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(79, 70, 229, 0.1);
+}
+
+.privacy-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+
+h2 {
+  color: var(--primary-color);
+  font-size: 1.75rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+h2::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 24px;
+  background: var(--primary-color);
+  margin-right: 12px;
+  border-radius: 4px;
+}
+
+h3 {
+  color: var(--text-color);
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.smth {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+h4 {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+  list-style: none;
+}
+
+li {
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+li::before {
+  content: '•';
+  color: var(--primary-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.highlight {
+  background: linear-gradient(120deg, rgba(79, 70, 229, 0.1) 0%, rgba(129, 140, 248, 0.1) 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--primary-color);
+  margin: 1.5rem 0;
+  overflow-x: hidden;
+}
+
+.contact-infoo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.contact-itemm {
+  background: rgba(79, 70, 229, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.privacy-section {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.privacy-section:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.privacy-section:nth-child(3) {
+  animation-delay: 0.4s;
+}

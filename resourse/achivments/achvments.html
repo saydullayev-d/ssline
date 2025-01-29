@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Достижения SSLine</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/header-footer/header-footer-media.css">
+  <link rel="stylesheet" href="/header-footer/header-footer.css">
+  <link rel="stylesheet" href="./achivments.css">
+  <link rel="stylesheet" href="./achivments-media.css">
+  <link rel="stylesheet" href="/font/font.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="/index.html">
+        <svg width="150" height="80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <!-- Иконка программирования (фигурные скобки) -->
+          <text x="10" y="50" font-family="monospace" font-size="40" fill="#4A90E2">
+            <!-- Левая фигурная скобка -->
+            <tspan opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0s" fill="freeze" />
+              {
+            </tspan>
+            <!-- Внутри скобок добавляем символы, связанные с программированием -->
+            <tspan x="25" y="45" font-size="20" fill="#FF6F61" opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.5s" fill="freeze" />
+              &lt;/&gt;
+            </tspan>
+            <!-- Правая фигурная скобка -->
+            <tspan x="53" y="50" opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1s" fill="freeze" />
+              }
+            </tspan>
+          </text>
+
+          <!-- Текст "Sam Soft Line" -->
+          <text x="75" y="27" font-family="'Roboto', sans-serif" font-size="20" fill="#555">
+            <tspan opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.5s" fill="freeze" />
+              <tspan fill="#4A90E2">S</tspan>am
+            </tspan>
+          </text>
+          <text x="80" y="47" font-family="'Roboto', sans-serif" font-size="20" fill="#555">
+            <tspan opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.7s" fill="freeze" />
+              <tspan fill="#4A90E2">S</tspan>oft
+            </tspan>
+          </text>
+          <text x="85" y="67" font-family="'Roboto', sans-serif" font-size="20" fill="#555">
+            <tspan opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.9s" fill="freeze" />
+              <tspan fill="#4A90E2">L</tspan>ine
+            </tspan>
+          </text>
+        </svg>
+      </a>
+      <div class="burger-menu" onclick="toggleMobileMenu()">
+        <img src="/img/burger.svg" class="bi bi-list">
+      </div>
+      <nav class="nav-menu">
+        <div class="nav-item no-select">
+          <div class="nav-item-link">Услуги</div>
+          <div class="dropdown">
+            <a href="/services/web-dev/web.html" class="dropdown-item">Веб-разработка</a>
+            <a href="/services/mob-dev/mob.html" class="dropdown-item">Мобильные приложения</a>
+            <a href="/services/PO-dev/dev-po.html" class="dropdown-item">Разработка ПО</a>
+            <a href="/services/ui/ui.html" class="dropdown-item">UX/UI Дизайн</a>
+          </div>
+        </div>
+
+        <div class="nav-item no-select">
+          <div class="nav-item-link">Портфолио</div>
+          <div class="dropdown">
+            <a href="" class="dropdown-item">Кейсы</a>
+            <a href="/resourse/project/project.html" class="dropdown-item">Проекты</a>
+            <a href="/resourse/achivments/achvments.html" class="dropdown-item">Достижения</a>
+          </div>
+        </div>
+
+        <div class="nav-item no-select">
+          <div class="nav-item-link">Решения</div>
+          <!-- <div class="dropdown">
+          </div> -->
+        </div>
+
+        <div class="nav-item no-select">
+          <div class="nav-item-link">Команда</div>
+          <div class="dropdown">
+            <a href="/aboutCompany/aboutus/aboutUs.html" class="dropdown-item">О нас</a>
+            <a href="/aboutCompany/careers/careers.html" class="dropdown-item">Вакансии</a>
+          </div>
+        </div>
+
+        <div class="mobile-menu-actions">
+          <a href="#" class="btn btn-primary mobile-request-btn">Оставить заявку</a>
+          <a href="#" class="btn btn-secondary login-btn mobile-login-btn">Войти</a>
+        </div>
+      </nav>
+
+      <div class="action-buttons">
+        <a href="#" id="contactBtnn" class="btn btn-primary">Оставить заявку</a>
+        <a href="#" class="btn btn-secondary login-btn">Войти</a>
+      </div>
+    </div>
+
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Вход</h2>
+        <form id="login-form">
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Пароль" required>
+          <button type="submit" class="btn btn-primary">Войти</button>
+          <p>Нет аккаунта? <a href="#" class="register-link">Регистрация</a></p>
+        </form>
+      </div>
+    </div>
+
+    <div id="requestModal" class="request-modal">
+      <div class="request-modal-content">
+        <span class="request-modal-close">&times;</span>
+        <form class="request-form">
+          <h2>Оставьте заявку</h2>
+          <input type="text" placeholder="Ваше имя" required>
+          <input type="email" placeholder="Ваш email" required>
+          <textarea style="resize: none;" placeholder="Ваше сообщение" rows="4" required></textarea>
+          <button type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="achievements-container">
+      <!-- Hero Section -->
+      <section class="achievements-hero">
+        <h1>Наши достижения</h1>
+        <p>Более 10 лет инноваций и успешных проектов в сфере информационных технологий</p>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="stats-section">
+        <div class="stat-card stats-animation">
+          <div class="stat-number">500+</div>
+          <h3>Успешных проектов</h3>
+          <p>Реализовано для клиентов по всему миру</p>
+        </div>
+        <div class="stat-card stats-animation">
+          <div class="stat-number">100+</div>
+          <h3>Специалистов</h3>
+          <p>Профессионалов в нашей команде</p>
+        </div>
+        <div class="stat-card stats-animation">
+          <div class="stat-number">15+</div>
+          <h3>Наград</h3>
+          <p>Международного уровня</p>
+        </div>
+        <div class="stat-card stats-animation">
+          <div class="stat-number">98%</div>
+          <h3>Довольных клиентов</h3>
+          <p>Рекомендуют нас другим</p>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="projects-section">
+        <h2>Знаковые проекты</h2>
+        <div class="project-grid">
+          <div class="project-card">
+            <div class="project-image" style="background-color: #3399ff;"></div>
+            <div class="project-content">
+              <h3>Система управления данными</h3>
+              <p>Разработка комплексной системы для крупного банка</p>
+              <p>Технологии: React, Node.js, MongoDB</p>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image" style="background-color: #004d99;"></div>
+            <div class="project-content">
+              <h3>AI-платформа анализа</h3>
+              <p>Создание системы предиктивной аналитики</p>
+              <p>Технологии: Python, TensorFlow, AWS</p>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image" style="background-color: #0066cc;"></div>
+            <div class="project-content">
+              <h3>Мобильное приложение</h3>
+              <p>Разработка приложения для службы доставки</p>
+              <p>Технологии: Flutter, Firebase</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Awards Section -->
+      <section class="awards-section">
+        <h2>Награды и признания</h2>
+        <div class="award-list">
+          <div class="award-item">
+            <div class="award-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <h3>Best IT Solution 2024</h3>
+            <p>Признание за инновационные решения в области финтех</p>
+          </div>
+          <div class="award-item">
+            <div class="award-icon">
+              <i class="fas fa-medal"></i>
+            </div>
+            <h3>Top Tech Innovator</h3>
+            <p>Лидер в области технологических инноваций</p>
+          </div>
+          <div class="award-item">
+            <div class="award-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <h3>Excellence in Development</h3>
+            <p>За выдающиеся достижения в разработке ПО</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Timeline Section -->
+      <section class="timeline-section">
+        <h2>История успеха</h2>
+        <div class="timeline">
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <h3>2015</h3>
+              <p>Основание компании и первые проекты в сфере веб-разработки</p>
+            </div>
+          </div>
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <h3>2018</h3>
+              <p>Расширение до 50+ сотрудников и открытие международного офиса</p>
+            </div>
+          </div>
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <h3>2020</h3>
+              <p>Запуск инновационного направления AI и Machine Learning</p>
+            </div>
+          </div>
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <h3>2024</h3>
+              <p>Достижение статуса ведущей IT-компании в регионе</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-top container2">
+      <div class="social-icons">
+        <a href="#" class="telegram"><i class="fab fa-telegram"></i></a>
+        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="contact-info">
+        <a href="tel:+998979191070">Телефон: +998 97 919 10 70</a>
+        <p>Адрес: г. Самарканд, ул. Новая, 15</p>
+        <a href="mailto: jonibek.usa@gmail.com">Email: SSLine@hmail.com</a>
+      </div>
+    </div>
+
+    <div class="footer-content container2">
+      <div class="footer-section">
+        <h4>О Компании</h4>
+        <div class="footer-links">
+          <a href="/aboutCompany/team/team.html">Команда</a>
+          <a href="/aboutCompany/careers/careers.html">Карьера</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Услуги</h4>
+        <div class="footer-links">
+          <a href="/services/web-dev/web.html">Веб-разработка</a>
+          <a href="/services/mob-dev/mob.html">Мобильные приложения</a>
+          <a href="/services/ui/ui.html">UX/UI Дизайн</a>
+          <a href="/services/PO-dev/dev-po.html">Разработка ПО</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Клиентам</h4>
+        <div class="footer-links">
+          <a href="/forClients/FAQ/faq.html">Часто задаваемые вопросы</a>
+          <a href="/forClients/politics/politics.html">Политика конфиденциальности</a>
+          <a href="/forClients/guarentees/guarentees.html">Гарантии</a>
+          <a href="/forClients/feedback/feedback.html">Отзывы</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Ресурсы</h4>
+        <div class="footer-links">
+          <a href="#">Блог</a>
+          <a href="#">Кейсы</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="./achivments.js"></script>
+  <script src="/header-footer/header.js"></script>
+</body>
+
+</html>

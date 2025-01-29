@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSLine Team</title>
+  <link rel="stylesheet" href="./team-style.css">
+  <link rel="stylesheet" href="./team-media.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="/header-footer/header-footer.css">
+  <link rel="stylesheet" href="/header-footer/header-footer-media.css">
+  <link rel="stylesheet" href="/font/font.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="/index.html">
+        <svg width="150" height="80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <!-- Иконка программирования (фигурные скобки) -->
+          <text x="10" y="50" font-family="monospace" font-size="40" fill="#4A90E2">
+            <!-- Левая фигурная скобка -->
+            <tspan opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0s" fill="freeze" />
+              {
+            </tspan>
+            <!-- Внутри скобок добавляем символы, связанные с программированием -->
+            <tspan x="25" y="45" font-size="20" fill="#FF6F61" opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.5s" fill="freeze" />
+              &lt;/&gt;
+            </tspan>
+            <!-- Правая фигурная скобка -->
+            <tspan x="53" y="50" opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1s" fill="freeze" />
+              }
+            </tspan>
+          </text>
+
+          <!-- Текст "Sam Soft Line" -->
+          <text x="75" y="27" font-family="'Roboto', sans-serif" font-size="20" fill="#555">
+            <tspan opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.5s" fill="freeze" />
+              <tspan fill="#4A90E2">S</tspan>am
+            </tspan>
+          </text>
+          <text x="80" y="47" font-family="'Roboto', sans-serif" font-size="20" fill="#555">
+            <tspan opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.7s" fill="freeze" />
+              <tspan fill="#4A90E2">S</tspan>oft
+            </tspan>
+          </text>
+          <text x="85" y="67" font-family="'Roboto', sans-serif" font-size="20" fill="#555">
+            <tspan opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.9s" fill="freeze" />
+              <tspan fill="#4A90E2">L</tspan>ine
+            </tspan>
+          </text>
+        </svg>
+      </a>
+
+      <div class="burger-menu" onclick="toggleMobileMenu()">
+        <img src="/img/burger.svg" class="bi bi-list">
+      </div>
+      <nav class="nav-menu">
+        <div class="nav-item no-select">
+          <div class="nav-item-link">Услуги</div>
+          <div class="dropdown">
+            <a href="/services/web-dev/web.html" class="dropdown-item">Веб-разработка</a>
+            <a href="/services/mob-dev/mob.html" class="dropdown-item">Мобильные приложения</a>
+            <a href="/services/PO-dev/dev-po.html" class="dropdown-item">Разработка ПО</a>
+            <a href="/services/ui/ui.html" class="dropdown-item">UX/UI Дизайн</a>
+          </div>
+        </div>
+
+        <div class="nav-item no-select">
+          <div class="nav-item-link">Портфолио</div>
+          <div class="dropdown">
+            <a href="" class="dropdown-item">Кейсы</a>
+            <a href="/resourse/project/project.html" class="dropdown-item">Проекты</a>
+            <a href="/resourse/achivments/achvments.html" class="dropdown-item">Достижения</a>
+          </div>
+        </div>
+
+        <div class="nav-item no-select">
+          <div class="nav-item-link">Решения</div>
+          <!-- <div class="dropdown">
+          </div> -->
+        </div>
+
+        <div class="nav-item no-select">
+          <div class="nav-item-link">Команда</div>
+          <div class="dropdown">
+            <a href="/aboutCompany/aboutus/aboutUs.html" class="dropdown-item">О нас</a>
+            <a href="/aboutCompany/careers/careers.html" class="dropdown-item">Вакансии</a>
+          </div>
+        </div>
+
+        <div class="mobile-menu-actions">
+          <a href="#" class="btn btn-primary mobile-request-btn">Оставить заявку</a>
+          <a href="#" class="btn btn-secondary login-btn mobile-login-btn">Войти</a>
+        </div>
+      </nav>
+
+      <div class="action-buttons">
+        <a href="#" id="contactBtnn" class="btn btn-primary">Оставить заявку</a>
+        <a href="#" class="btn btn-secondary login-btn">Войти</a>
+      </div>
+    </div>
+
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Вход</h2>
+        <form id="login-form">
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Пароль" required>
+          <button type="submit" class="btn btn-primary">Войти</button>
+          <p>Нет аккаунта? <a href="#" class="register-link">Регистрация</a></p>
+        </form>
+      </div>
+    </div>
+
+    <div id="requestModal" class="request-modal">
+      <div class="request-modal-content">
+        <span class="request-modal-close">&times;</span>
+        <form class="request-form">
+          <h2>Оставьте заявку</h2>
+          <input type="text" placeholder="Ваше имя" required>
+          <input type="email" placeholder="Ваш email" required>
+          <textarea style="resize: none;" placeholder="Ваше сообщение" rows="4" required></textarea>
+          <button type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="team-container">
+      <section class="team-intro">
+        <h1 class="team-intro__title">Наша команда</h1>
+        <p class="team-intro__text">Мы - команда талантливых профессионалов, объединенных общей целью создавать
+          инновационные технологические решения, которые меняют мир к лучшему.</p>
+      </section>
+
+      <section>
+        <h2 class="section-title">Ключевые специалисты</h2>
+        <p class="section-subtitle">Познакомьтесь с экспертами, которые делают наши проекты успешными</p>
+        <div class="team-grid">
+          <div class="team-member">
+            <img src="/img/koop.jpg" alt="Член команды" class="team-member__image">
+            <div class="team-member__info">
+              <h3 class="team-member__name">Александр Петров</h3>
+              <p class="team-member__position">Технический директор</p>
+              <p class="team-member__desc">10+ лет опыта в разработке масштабируемых решений и управлении командами
+                разработчиков.</p>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <img src="/img/magaz.jpg" alt="Член команды" class="team-member__image">
+            <div class="team-member__info">
+              <h3 class="team-member__name">Мария Иванова</h3>
+              <p class="team-member__position">UX/UI Дизайнер</p>
+              <p class="team-member__desc">Создает интуитивно понятные и красивые интерфейсы, основанные на
+                исследованиях
+                пользователей.</p>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <img src="/img/lending.jpg" alt="Член команды" class="team-member__image">
+            <div class="team-member__info">
+              <h3 class="team-member__name">Дмитрий Соколов</h3>
+              <p class="team-member__position">Full-stack разработчик</p>
+              <p class="team-member__desc">Эксперт в разработке веб-приложений с использованием современных технологий.
+              </p>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <img src="/img/fitness.jpg" alt="Член команды" class="team-member__image">
+            <div class="team-member__info">
+              <h3 class="team-member__name">Елена Смирнова</h3>
+              <p class="team-member__position">Project Manager</p>
+              <p class="team-member__desc">Профессионал в управлении IT-проектами с опытом работы в международных
+                компаниях.</p>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <img src="/img/koop.jpg" alt="Член команды" class="team-member__image">
+            <div class="team-member__info">
+              <h3 class="team-member__name">Игорь Волков</h3>
+              <p class="team-member__position">DevOps инженер</p>
+              <p class="team-member__desc">Специалист по автоматизации и оптимизации процессов разработки и
+                развертывания.
+              </p>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <img src="/img/magaz.jpg" alt="Член команды" class="team-member__image">
+            <div class="team-member__info">
+              <h3 class="team-member__name">Анна Козлова</h3>
+              <p class="team-member__position">QA инженер</p>
+              <p class="team-member__desc">Эксперт по обеспечению качества с глубоким пониманием автоматизированного
+                тестирования.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Наши достижения</h2>
+        <p class="section-subtitle">Результаты, которыми мы гордимся</p>
+        <div class="team-stats">
+          <div class="stat-item">
+            <div class="stat-item__number">150+</div>
+            <div class="stat-item__text">Завершенных проектов</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-item__number">50+</div>
+            <div class="stat-item__text">Профессионалов в команде</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-item__number">12</div>
+            <div class="stat-item__text">Лет на рынке</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Наши ценности</h2>
+        <p class="section-subtitle">Принципы, которыми мы руководствуемся в работе</p>
+        <div class="team-values">
+          <div class="value-card">
+            <div class="value-card__icon">🚀</div>
+            <h3 class="value-card__title">Инновации</h3>
+            <p class="value-card__text">Мы постоянно исследуем новые технологии и подходы, чтобы предлагать самые
+              современные решения.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-card__icon">🤝</div>
+            <h3 class="value-card__title">Командная работа</h3>
+            <p class="value-card__text">Вместе мы создаем среду, где каждый может развиваться и вносить свой вклад в
+              общее
+              дело.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-card__icon">💡</div>
+            <h3 class="value-card__title">Качество</h3>
+            <p class="value-card__text">Мы не идем на компромиссы, когда речь идет о качестве наших продуктов и услуг.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-top container2">
+      <div class="social-icons">
+        <a href="#" class="telegram"><i class="fab fa-telegram"></i></a>
+        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="contact-info">
+        <a href="tel:+998979191070">Телефон: +998 97 919 10 70</a>
+        <p>Адрес: г. Самарканд, ул. Новая, 15</p>
+        <a href="mailto: jonibek.usa@gmail.com">Email: SSLine@hmail.com</a>
+      </div>
+    </div>
+
+    <div class="footer-content container2">
+      <div class="footer-section">
+        <h4>О Компании</h4>
+        <div class="footer-links">
+          <a href="/aboutCompany/team/team.html">Команда</a>
+          <a href="/aboutCompany/careers/careers.html">Карьера</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Услуги</h4>
+        <div class="footer-links">
+          <a href="/services/web-dev/web.html">Веб-разработка</a>
+          <a href="/services/mob-dev/mob.html">Мобильные приложения</a>
+          <a href="/services/ui/ui.html">UX/UI Дизайн</a>
+          <a href="/services/PO-dev/dev-po.html">Разработка ПО</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Клиентам</h4>
+        <div class="footer-links">
+          <a href="/forClients/FAQ/faq.html">Часто задаваемые вопросы</a>
+          <a href="/forClients/politics/politics.html">Политика конфиденциальности</a>
+          <a href="/forClients/guarentees/guarentees.html">Гарантии</a>
+          <a href="/forClients/feedback/feedback.html">Отзывы</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Ресурсы</h4>
+        <div class="footer-links">
+          <a href="#">Блог</a>
+          <a href="#">Кейсы</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="/header-footer/header.js"></script>
+</body>
+
+</html>

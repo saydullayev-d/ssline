@@ -1,0 +1,49 @@
+/* MAin */
+@media (max-width: 768px) {
+  .guarantee-container {
+    padding: 20px;
+  }
+
+  .guarantee-title {
+    font-size: 32px;
+  }
+
+  .guarantee-subtitle {
+    font-size: 24px;
+  }
+
+  .guarantee-section {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 350px) {
+  .guarantee-container {
+    padding: 10px;
+  }
+
+  .guarantee-title {
+    font-size: 28px;
+  }
+
+  .guarantee-subtitle {
+    font-size: 20px;
+  }
+
+  .guarantee-section {
+    padding: 20px;
+  }
+
+  .guarantee-collapse-btn {
+    display: block;
+  }
+
+  .guarantee-content {
+    display: none;
+  }
+
+  .guarantee-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+}

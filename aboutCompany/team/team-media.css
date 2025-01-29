@@ -1,0 +1,46 @@
+/* MAIN */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .team-intro__title {
+    font-size: 2rem;
+  }
+
+  .team-intro__text {
+    font-size: 1.1rem;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .team-container {
+    padding: 15px;
+  }
+
+  .team-intro__title {
+    font-size: 1.8rem;
+  }
+
+  .team-member__image {
+    height: 250px;
+  }
+}
+
+@media (max-width: 350px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-member__image {
+    height: 200px;
+  }
+
+  .value-card {
+    padding: 20px;
+  }
+}

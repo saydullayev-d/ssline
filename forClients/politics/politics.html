@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Политика конфиденциальности SSLine</title>
+  <link rel="stylesheet" href="./politics-media.css">
+  <link rel="stylesheet" href="./politics-style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="/header-footer/header-footer-media.css">
+  <link rel="stylesheet" href="/header-footer/header-footer.css">
+  <link rel="stylesheet" href="/font/font.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="/index.html">
+        <svg width="150" height="80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <!-- Иконка программирования (фигурные скобки) -->
+          <text x="10" y="50" font-family="monospace" font-size="40" fill="#4A90E2">
+            <!-- Левая фигурная скобка -->
+            <tspan opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0s" fill="freeze" />
+              {
+            </tspan>
+            <!-- Внутри скобок добавляем символы, связанные с программированием -->
+            <tspan x="25" y="45" font-size="20" fill="#FF6F61" opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.5s" fill="freeze" />
+              &lt;/&gt;
+            </tspan>
+            <!-- Правая фигурная скобка -->
+            <tspan x="53" y="50" opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1s" fill="freeze" />
+              }
+            </tspan>
+          </text>
+
+          <!-- Текст "Sam Soft Line" -->
+          <text x="75" y="27" font-family="'Roboto', sans-serif" font-size="20" fill="#555">
+            <tspan opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.5s" fill="freeze" />
+              <tspan fill="#4A90E2">S</tspan>am
+            </tspan>
+          </text>
+          <text x="80" y="47" font-family="'Roboto', sans-serif" font-size="20" fill="#555">
+            <tspan opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.7s" fill="freeze" />
+              <tspan fill="#4A90E2">S</tspan>oft
+            </tspan>
+          </text>
+          <text x="85" y="67" font-family="'Roboto', sans-serif" font-size="20" fill="#555">
+            <tspan opacity="0">
+              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.9s" fill="freeze" />
+              <tspan fill="#4A90E2">L</tspan>ine
+            </tspan>
+          </text>
+        </svg>
+      </a>
+      <div class="burger-menu" onclick="toggleMobileMenu()">
+        <img src="/img/burger.svg" class="bi bi-list">
+      </div>
+      <nav class="nav-menu">
+        <div class="nav-item no-select">
+          <div class="nav-item-link">Услуги</div>
+          <div class="dropdown">
+            <a href="/services/web-dev/web.html" class="dropdown-item">Веб-разработка</a>
+            <a href="/services/mob-dev/mob.html" class="dropdown-item">Мобильные приложения</a>
+            <a href="/services/PO-dev/dev-po.html" class="dropdown-item">Разработка ПО</a>
+            <a href="/services/ui/ui.html" class="dropdown-item">UX/UI Дизайн</a>
+          </div>
+        </div>
+
+        <div class="nav-item no-select">
+          <div class="nav-item-link">Портфолио</div>
+          <div class="dropdown">
+            <a href="" class="dropdown-item">Кейсы</a>
+            <a href="/resourse/project/project.html" class="dropdown-item">Проекты</a>
+            <a href="/resourse/achivments/achvments.html" class="dropdown-item">Достижения</a>
+          </div>
+        </div>
+
+        <div class="nav-item no-select">
+          <div class="nav-item-link">Решения</div>
+          <!-- <div class="dropdown">
+          </div> -->
+        </div>
+
+        <div class="nav-item no-select">
+          <div class="nav-item-link">Команда</div>
+          <div class="dropdown">
+            <a href="/aboutCompany/aboutus/aboutUs.html" class="dropdown-item">О нас</a>
+            <a href="/aboutCompany/careers/careers.html" class="dropdown-item">Вакансии</a>
+          </div>
+        </div>
+
+        <div class="mobile-menu-actions">
+          <a href="#" class="btn btn-primary mobile-request-btn">Оставить заявку</a>
+          <a href="#" class="btn btn-secondary login-btn mobile-login-btn">Войти</a>
+        </div>
+      </nav>
+
+      <div class="action-buttons">
+        <a href="#" id="contactBtnn" class="btn btn-primary">Оставить заявку</a>
+        <a href="#" class="btn btn-secondary login-btn">Войти</a>
+      </div>
+    </div>
+
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Вход</h2>
+        <form id="login-form">
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Пароль" required>
+          <button type="submit" class="btn btn-primary">Войти</button>
+          <p>Нет аккаунта? <a href="#" class="register-link">Регистрация</a></p>
+        </form>
+      </div>
+    </div>
+
+    <div id="requestModal" class="request-modal">
+      <div class="request-modal-content">
+        <span class="request-modal-close">&times;</span>
+        <form class="request-form">
+          <h2>Оставьте заявку</h2>
+          <input type="text" placeholder="Ваше имя" required>
+          <input type="email" placeholder="Ваш email" required>
+          <textarea style="resize: none;" placeholder="Ваше сообщение" rows="4" required></textarea>
+          <button type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <h1>Политика конфиденциальности</h1>
+
+      <div class="privacy-section">
+        <h2>1. Общие сведения</h2>
+        <p><strong>SSLine</strong></p>
+        <div class="contact-infoo">
+          <div class="contact-itemm">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            ул. Технологическая, 123, Москва
+          </div>
+          <div class="contact-itemm">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            <a href="mailto:jonibek.usa@gmail.com" class="smth">jonibek.usa@gmail.com</a>
+          </div>
+          <div class="contact-itemm">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+            </svg>
+            <a class="smth" href="tel:+998979191070">+998 (97) 919 10 70</a>
+          </div>
+        </div>
+        <p class="highlight">
+          Настоящий документ определяет политику обработки и защиты персональных данных пользователей наших сервисов и
+          веб-сайта. Мы придаем первостепенное значение защите ваших персональных данных и обеспечиваем их
+          конфиденциальность на самом высоком уровне.
+        </p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>2. Сбор данных</h2>
+        <h3>2.1 Какие данные мы собираем:</h3>
+
+        <div id="dataTypes">
+          <h4>Личные данные:</h4>
+          <ul>
+            <li>Имя и фамилия</li>
+            <li>Адрес электронной почты</li>
+            <li>Номер телефона</li>
+          </ul>
+
+          <h4>Технические данные:</h4>
+          <ul>
+            <li>IP-адрес</li>
+            <li>Информация о браузере и устройстве</li>
+            <li>Cookie-файлы</li>
+            <li>Данные о сессии</li>
+          </ul>
+
+          <h4>Финансовые данные:</h4>
+          <ul>
+            <li>История транзакций</li>
+            <li>Информация о способах оплаты</li>
+          </ul>
+        </div>
+
+        <h3>2.2 Способы сбора данных:</h3>
+        <div id="collectionMethods">
+          <ul>
+            <li>Через заполнение форм на сайте</li>
+            <li>Автоматический сбор через cookie и аналитические инструменты</li>
+            <li>От платёжных систем и других третьих лиц</li>
+          </ul>
+        </div>
+      </div>
+      <div class="privacy-section">
+        <h2>3. Цели обработки данных</h2>
+        <div id="processingPurposes">
+          <p class="highlight">
+            Мы обрабатываем ваши данные исключительно для конкретных, заранее определенных и законных целей.
+          </p>
+          <ul>
+            <li>Выполнение договорных обязательств перед клиентами</li>
+            <li>Персонализация контента и маркетинговых материалов</li>
+            <li>Обеспечение технической поддержки пользователей</li>
+            <li>Анализ и улучшение наших продуктов и услуг</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="privacy-section">
+        <h2>4. Передача данных третьим лицам</h2>
+        <div id="dataSharing">
+          <h3>4.1 Категории получателей данных:</h3>
+          <ul>
+            <li>Провайдеры хостинга и облачных услуг</li>
+            <li>Платёжные системы и процессинговые центры</li>
+            <li>Маркетинговые и аналитические партнёры</li>
+          </ul>
+
+          <h3>4.2 Условия передачи данных:</h3>
+          <p class="highlight">
+            Передача данных третьим лицам осуществляется только при наличии вашего явного согласия или в случаях,
+            предусмотренных законодательством.
+          </p>
+        </div>
+      </div>
+
+      <div class="privacy-section">
+        <h2>5. Безопасность данных</h2>
+        <div id="dataSecurity">
+          <p>Мы применяем следующие методы защиты ваших данных:</p>
+          <ul>
+            <li>Современные методы шифрования при передаче и хранении данных</li>
+            <li>Строгое ограничение доступа к персональным данным</li>
+            <li>Регулярный аудит систем безопасности</li>
+            <li>Многоуровневая система защиты от несанкционированного доступа</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="privacy-section">
+        <h2>6. Хранение данных</h2>
+        <div id="dataRetention">
+          <p class="highlight">
+            Мы храним ваши данные только в течение периода, необходимого для достижения целей их обработки или в
+            соответствии с требованиями законодательства.
+          </p>
+          <h3>Условия удаления данных:</h3>
+          <ul>
+            <li>По вашему запросу (если это не противоречит законодательству)</li>
+            <li>По истечении срока необходимости их использования</li>
+            <li>При отзыве согласия на обработку</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="privacy-section">
+        <h2>7. Права пользователей</h2>
+        <div id="userRights">
+          <p>Вы имеете следующие права в отношении ваших персональных данных:</p>
+          <ul>
+            <li>Право на доступ к вашим персональным данным</li>
+            <li>Право на исправление неточных данных</li>
+            <li>Право на удаление данных ("право быть забытым")</li>
+            <li>Право на отзыв согласия на обработку данных</li>
+            <li>Право на подачу жалобы в надзорный орган</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="privacy-section">
+        <h2>8. Cookie и трекинг</h2>
+        <div id="cookies">
+          <h3>8.1 Типы используемых cookie:</h3>
+          <ul>
+            <li>Необходимые cookie для работы сайта</li>
+            <li>Аналитические cookie (Google Analytics)</li>
+            <li>Рекламные cookie для персонализации контента</li>
+          </ul>
+
+          <h3>8.2 Управление cookie:</h3>
+          <p class="highlight">
+            Вы можете управлять настройками cookie через баннер на нашем сайте или в настройках вашего браузера.
+          </p>
+        </div>
+      </div>
+
+      <div class="privacy-section">
+        <h2>9. Юрисдикция и применимое законодательство</h2>
+        <div id="jurisdiction">
+          <p>Обработка персональных данных осуществляется в соответствии с законодательством Российской Федерации,
+            включая:</p>
+          <ul>
+            <li>Федеральный закон "О персональных данных" от 27.07.2006 N 152-ФЗ</li>
+            <li>Общий регламент по защите данных (GDPR) для пользователей из ЕС</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="privacy-section">
+        <h2>10. Изменения политики</h2>
+        <div id="policyUpdates">
+          <p class="highlight">
+            Мы оставляем за собой право вносить изменения в данную Политику конфиденциальности. Все изменения будут
+            опубликованы на этой странице с указанием даты последнего обновления.
+          </p>
+          <p>О существенных изменениях мы уведомим вас дополнительно через:</p>
+          <ul>
+            <li>Уведомление на сайте</li>
+            <li>Email-рассылку</li>
+            <li>Всплывающее уведомление при следующем входе</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="privacy-section">
+        <h2>11. Контакты для вопросов</h2>
+        <div id="contact" class="highlight">
+          <p>Если у вас возникли вопросы относительно обработки ваших персональных данных, вы можете связаться с нашим
+            специалистом по защите данных:</p>
+          <div class="contact-infoo">
+            <div class="contact-itemm">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+              </svg>
+              <a class="smth" href="tel:+998979191070">+998 (97) 919 10 70</a>
+            </div>
+            <div class="contact-itemm">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              <a href="mailto:jonibek.usa@gmail.com" class="smth">jonibek.usa@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-top container2">
+      <div class="social-icons">
+        <a href="#" class="telegram"><i class="fab fa-telegram"></i></a>
+        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="contact-info">
+        <a href="tel:+998979191070">Телефон: +998 97 919 10 70</a>
+        <p>Адрес: г. Самарканд, ул. Новая, 15</p>
+        <a href="mailto: jonibek.usa@gmail.com">Email: SSLine@hmail.com</a>
+      </div>
+    </div>
+
+    <div class="footer-content container2">
+      <div class="footer-section">
+        <h4>О Компании</h4>
+        <div class="footer-links">
+          <a href="/aboutCompany/team/team.html">Команда</a>
+          <a href="/aboutCompany/careers/careers.html">Карьера</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Услуги</h4>
+        <div class="footer-links">
+          <a href="/services/web-dev/web.html">Веб-разработка</a>
+          <a href="/services/mob-dev/mob.html">Мобильные приложения</a>
+          <a href="/services/ui/ui.html">UX/UI Дизайн</a>
+          <a href="/services/PO-dev/dev-po.html">Разработка ПО</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Клиентам</h4>
+        <div class="footer-links">
+          <a href="/forClients/FAQ/faq.html">Часто задаваемые вопросы</a>
+          <a href="/forClients/politics/politics.html">Политика конфиденциальности</a>
+          <a href="/forClients/guarentees/guarentees.html">Гарантии</a>
+          <a href="/forClients/feedback/feedback.html">Отзывы</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Ресурсы</h4>
+        <div class="footer-links">
+          <a href="#">Блог</a>
+          <a href="#">Кейсы</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="./politics.js"></script>
+  <script src="/header-footer/header.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+/* MAIN */
+@media (max-width: 350px) {
+  .reviews-title {
+    font-size: 24px;
+  }
+
+  .reviews-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filter-section {
+    flex-direction: column;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .review-card {
+    padding: 15px;
+  }
+
+  .reviewer-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .reviewer-name {
+    font-size: 16px;
+  }
+
+  .reviewer-company {
+    font-size: 12px;
+  }
+
+  .review-text {
+    font-size: 14px;
+  }
+
+  .add-review-section {
+    padding: 15px;
+  }
+
+  .star-rating label {
+    font-size: 20px;
+  }
+}
