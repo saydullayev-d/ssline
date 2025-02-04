@@ -15,48 +15,15 @@
 <body>
   <header class="header">
     <div class="header-content">
-      <a href="/index.html">
-        <svg width="150" height="80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <!-- Иконка программирования (фигурные скобки) -->
-          <text x="10" y="50" font-family="monospace" font-size="40" fill="#4A90E2">
-            <!-- Левая фигурная скобка -->
-            <tspan opacity="0">
-              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0s" fill="freeze" />
-              {
-            </tspan>
-            <!-- Внутри скобок добавляем символы, связанные с программированием -->
-            <tspan x="25" y="45" font-size="20" fill="#FF6F61" opacity="0">
-              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.5s" fill="freeze" />
-              &lt;/&gt;
-            </tspan>
-            <!-- Правая фигурная скобка -->
-            <tspan x="53" y="50" opacity="0">
-              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1s" fill="freeze" />
-              }
-            </tspan>
-          </text>
-
-          <!-- Текст "Sam Soft Line" -->
-          <text x="75" y="27" font-family="'Roboto', sans-serif" font-size="20" fill="#555">
-            <tspan opacity="0">
-              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.5s" fill="freeze" />
-              <tspan fill="#4A90E2">S</tspan>am
-            </tspan>
-          </text>
-          <text x="80" y="47" font-family="'Roboto', sans-serif" font-size="20" fill="#555">
-            <tspan opacity="0">
-              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.7s" fill="freeze" />
-              <tspan fill="#4A90E2">S</tspan>oft
-            </tspan>
-          </text>
-          <text x="85" y="67" font-family="'Roboto', sans-serif" font-size="20" fill="#555">
-            <tspan opacity="0">
-              <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.9s" fill="freeze" />
-              <tspan fill="#4A90E2">L</tspan>ine
-            </tspan>
-          </text>
-        </svg>
+      <a class="flex logo" href="/index.html">
+        <img src="/img/logo-ssl.svg" alt="">
+        <h1>
+          <span>Sam</span>
+          <span>Soft</span>
+          <span>Line</span>
+        </h1>
       </a>
+
       <div class="burger-menu" onclick="toggleMobileMenu()">
         <img src="/img/burger.svg" class="bi bi-list">
       </div>

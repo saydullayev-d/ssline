@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.flex{
+  display: flex;
+  align-items: center;
+}
 :root {
   --primary-color: #2c3e50;
   --secondary-color: #F3F4F6;
