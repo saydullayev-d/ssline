@@ -418,7 +418,7 @@ text{
 
 .project-type {
   font-size: 0.9rem;
-  color: var(--secondary-color);
+  color: var(--text-color);
   margin-bottom: 10px;
   font-weight: 600;
   text-transform: uppercase;
@@ -453,10 +453,7 @@ text{
   transition: background-color 0.3s ease;
 }
 
-.project-card:hover .tech-tag {
-  background-color: var(--secondary-color);
-  color: white;
-}
+
 
 
 @keyframes gradientBG {

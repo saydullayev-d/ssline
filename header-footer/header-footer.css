@@ -1,6 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 
+
+/* Активная ссылка — везде одинаково */
+a.active,
+.nav-item-link.active,
+.dropdown-item.active,
+.footer-links a.active {
+  color: #203864 !important;
+  font-weight: 700;
+  position: relative;
+}
+
+a.active::before,
+.footer-links a.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #203864;
+  border-radius: 1px;
+}
+
+/* Для дропдауна */
+.dropdown-item.active {
+  background-color: #f0f4ff;
+  border-radius: 8px;
+}
+
 /* Header */
 .header {
   position: fixed;

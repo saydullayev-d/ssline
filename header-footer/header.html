@@ -1,0 +1,86 @@
+<header class="header">
+  <div class="header-content">
+    <a class="flex logo" href="/index.html">
+      <img src="/img/logo-ssl.svg" alt="">
+      <h1>
+        <span>Sam</span>
+        <span>Soft</span>
+        <span>Line</span>
+      </h1>
+    </a>
+
+    <div class="burger-menu" onclick="toggleMobileMenu()">
+      <img src="/img/burger.svg" class="bi bi-list">
+    </div>
+    <nav class="nav-menu">
+      <div class="nav-item no-select">
+        <div class="nav-item-link">Услуги</div>
+        <div class="dropdown">
+          <a href="/services/web-dev/web.html" class="dropdown-item">Веб-разработка</a>
+          <a href="/services/mob-dev/mob.html" class="dropdown-item">Мобильные приложения</a>
+          <a href="/services/PO-dev/dev-po.html" class="dropdown-item">Разработка ПО</a>
+          <a href="/services/ui/ui.html" class="dropdown-item">UX/UI Дизайн</a>
+        </div>
+      </div>
+
+      <div class="nav-item no-select">
+        <div class="nav-item-link">Портфолио</div>
+        <div class="dropdown">
+          <a href="#" class="dropdown-item">Кейсы</a>
+          <a href="/resourse/project/project.html" class="dropdown-item">Проекты</a>
+          <a href="/resourse/achivments/achvments.html" class="dropdown-item">Достижения</a>
+        </div>
+      </div>
+
+      <div class="nav-item no-select">
+        <div class="nav-item-link">Решения</div>
+      </div>
+
+      <div class="nav-item no-select">
+        <div class="nav-item-link">Команда</div>
+        <div class="dropdown">
+          <a href="/aboutCompany/aboutus/aboutUs.html" class="dropdown-item">О нас</a>
+          <a href="/aboutCompany/careers/careers.html" class="dropdown-item">Вакансии</a>
+        </div>
+      </div>
+
+      <div class="mobile-menu-actions">
+        <a href="#" class="btn btn-primary mobile-request-btn">Оставить заявку</a>
+        <a href="#" class="btn btn-secondary login-btn mobile-login-btn">Войти</a>
+      </div>
+    </nav>
+
+    <div class="action-buttons">
+      <a href="#" id="contactBtnn" class="btn btn-primary">Оставить заявку</a>
+      <a href="#" class="btn btn-secondary login-btn">Войти</a>
+    </div>
+  </div>
+
+  <!-- Модалка входа -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Вход</h2>
+      <form id="login-form">
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Пароль" required>
+        <button type="submit" class="btn btn-primary">Войти</button>
+        <p>Нет аккаунта? <a href="#" class="register-link">Регистрация</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Модалка заявки -->
+  <div id="requestModal" class="request-modal">
+    <div class="request-modal-content">
+      <span class="request-modal-close">&times;</span>
+      <form class="request-form">
+        <h2>Оставьте заявку</h2>
+        <input type="text" placeholder="Ваше имя" required>
+        <input type="email" placeholder="Ваш email" required>
+        <textarea style="resize: none;" placeholder="Ваше сообщение" rows="4" required></textarea>
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+</header>
