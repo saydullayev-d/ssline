@@ -31,35 +31,69 @@ a.active::before,
 }
 .logotip{
   height: 80px;
-}
+}/* ========= НОВЫЕ СТИЛИ ДЛЯ ХЕДЕРА ========= */
+
+/* Изначальное состояние — прозрачный + чёрный текст */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   backdrop-filter: blur(10px);
-  background-color: rgb(29, 29, 29);        /* изначально полностью прозрачный */
+  background-color: transparent;
   box-shadow: none;
   z-index: 1000;
-  transition: all 0.4s ease;     
-  padding: 5px 0;                /* немного воздуха сверху/снизу */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 15px 0;
 }
 
-/* Состояние при скролле */
+/* Когда проскроллили — тёмный фон + белый текст */
 .header.scrolled {
-  background-color: rgba(29, 29, 29, 0.72);   /* почти чёрный, как у тебя было */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  padding: 0 0;                             /* можно чуть сжать при скролле */
+  background-color: rgba(29, 29, 29, 0.75);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 8px 0;
 }
 
-/* Опционально: логотип и текст становятся ярче при скролле */
+/* === ЧЁРНЫЙ ТЕКСТ ПО УМОЛЧАНИЮ === */
+.header .nav-item-link,
+.header .btn-secondary,
+.header .btn-secondary a,
+.header .mobile-menu-actions a {
+  color: #1a1a1a !important;
+  transition: color 0.4s ease;
+}
+
+.header .burger-menu img {
+  filter: brightness(0); /* чёрный бургер */
+  transition: filter 0.4s ease;
+}
+
+.header .btn-primary {
+  background-color: #203864 !important;
+  color: white !important;
+}
+
 .header.scrolled .nav-item-link,
 .header.scrolled .btn-secondary,
-.header.scrolled .burger-menu img {
+.header.scrolled .action-buttons a,
+.header.scrolled .mobile-menu-actions a {
   color: #ffffff !important;
 }
 
-/* Если хочешь, чтобы при прозрачном хедере текст был белый всегда — уже и так белый */
+.header.scrolled .burger-menu img {
+  filter: brightness(0) invert(1); /* белый бургер */
+}
+
+.header .logotip {
+  filter: brightness(0);
+  transition: filter 0.4s ease;
+}
+.header.scrolled .logotip {
+  filter: none;
+}
+
+
+
 .flex {
   display: flex;
   align-items: center;
