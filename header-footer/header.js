@@ -144,3 +144,18 @@ function initializeHeader() {
     }
   });
 }
+function handleHeaderScroll() {
+  const header = document.querySelector('.header');
+  
+  if (window.scrollY > 50) {                 // 50px — порог скролла
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+}
+
+// Запускаем при загрузке и при скролле
+window.addEventListener('scroll', handleHeaderScroll);
+// И сразу проверим на случай, если страница уже проскроллена (например, при переходе по якорю)
+handleHeaderScroll();
+    

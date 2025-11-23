@@ -29,19 +29,37 @@ a.active::before,
   background-color: #f0f4ff;
   border-radius: 8px;
 }
-
-/* Header */
+.logotip{
+  height: 80px;
+}
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  background-color: rgb(29, 29, 29);        /* изначально полностью прозрачный */
+  box-shadow: none;
   z-index: 1000;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;     
+  padding: 5px 0;                /* немного воздуха сверху/снизу */
 }
 
+/* Состояние при скролле */
+.header.scrolled {
+  background-color: rgba(29, 29, 29, 0.72);   /* почти чёрный, как у тебя было */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 0 0;                             /* можно чуть сжать при скролле */
+}
+
+/* Опционально: логотип и текст становятся ярче при скролле */
+.header.scrolled .nav-item-link,
+.header.scrolled .btn-secondary,
+.header.scrolled .burger-menu img {
+  color: #ffffff !important;
+}
+
+/* Если хочешь, чтобы при прозрачном хедере текст был белый всегда — уже и так белый */
 .flex {
   display: flex;
   align-items: center;
@@ -52,15 +70,15 @@ a.active::before,
 }
 
 .logo span:nth-child(1) {
-  color: black;
+  color: white;
 }
 
 .logo span:nth-child(2) {
-  color: rgb(58, 58, 58);
+  color: white;
 }
 
 .logo span:nth-child(3) {
-  color: grey;
+  color: white;
 }
 
 text {
@@ -128,7 +146,7 @@ a {
 }
 
 .nav-item-link {
-  color: #333;
+  color: #ffffff;
   display: block;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -313,13 +331,13 @@ a {
 }
 
 .btn-secondary {
-  background-color: white;
-  color: #203864;
-  border: 2px solid #203864;
+  background-color:transparent;
+  color: #ffffff;
+  border: none;
 }
 
 .btn-secondary:hover {
-  background-color: #dddddd;
+  background-color: rgb(56, 56, 56);
 }
 
 .mobile-menu-actions {
@@ -478,4 +496,14 @@ a {
 
 .footer-links a:hover {
   color: #4a90e2;
+}
+
+/* Логотип никогда не подсвечивается */
+.logo[data-no-active].active {
+  color: inherit !important;
+  font-weight: inherit !important;
+}
+
+.logo[data-no-active].active::before {
+  display: none !important;
 }
