@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-
-/* Активная ссылка — везде одинаково */
 a.active,
 .nav-item-link.active,
 .dropdown-item.active,
@@ -24,16 +21,15 @@ a.active::before,
   border-radius: 1px;
 }
 
-/* Для дропдауна */
 .dropdown-item.active {
   background-color: #f0f4ff;
   border-radius: 8px;
 }
-.logotip{
-  height: 80px;
-}/* ========= НОВЫЕ СТИЛИ ДЛЯ ХЕДЕРА ========= */
 
-/* Изначальное состояние — прозрачный + чёрный текст */
+.logotip {
+  height: 80px;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -47,31 +43,26 @@ a.active::before,
   padding: 15px 0;
 }
 
-/* Когда проскроллили — тёмный фон + белый текст */
 .header.scrolled {
   background-color: rgba(29, 29, 29, 0.75);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   padding: 8px 0;
 }
 
-/* === ЧЁРНЫЙ ТЕКСТ ПО УМОЛЧАНИЮ === */
 .header .nav-item-link,
 .header .btn-secondary,
-.header .btn-secondary a,
+.header .action-buttons a,
 .header .mobile-menu-actions a {
   color: #1a1a1a !important;
   transition: color 0.4s ease;
 }
 
 .header .burger-menu img {
-  filter: brightness(0); /* чёрный бургер */
+  filter: brightness(0);
   transition: filter 0.4s ease;
 }
 
-.header .btn-primary {
-  background-color: #203864 !important;
-  color: white !important;
-}
+
 
 .header.scrolled .nav-item-link,
 .header.scrolled .btn-secondary,
@@ -80,19 +71,23 @@ a.active::before,
   color: #ffffff !important;
 }
 
+.header.scrolled .btn-primary:hover,
+.header.scrolled .btn-secondary:hover {
+  background-color: rgb(56, 56, 56);
+}
+
 .header.scrolled .burger-menu img {
-  filter: brightness(0) invert(1); /* белый бургер */
+  filter: brightness(0) invert(1);
 }
 
 .header .logotip {
   filter: brightness(0);
   transition: filter 0.4s ease;
 }
+
 .header.scrolled .logotip {
   filter: none;
 }
-
-
 
 .flex {
   display: flex;
@@ -120,7 +115,7 @@ text {
 }
 
 .header-content {
-  height: 80px !important;
+  height: 65px !important;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -170,13 +165,9 @@ a {
 
 .no-select {
   -webkit-user-select: none;
-  /* Chrome, Safari, Opera */
   -moz-user-select: none;
-  /* Firefox */
   -ms-user-select: none;
-  /* Internet Explorer/Edge */
   user-select: none;
-  /* Стандартный синтаксис */
 }
 
 .nav-item-link {
@@ -251,13 +242,12 @@ a {
 }
 
 .btn-primary {
-  background-color: #203864;
-  color: white;
-  /* border: 2px solid #007bff; */
+  background-color: transparent;
+  border: none;
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: rgb(216, 216, 216);
 }
 
 .request-modal {
@@ -365,20 +355,19 @@ a {
 }
 
 .btn-secondary {
-  background-color:transparent;
+  background-color: transparent;
   color: #ffffff;
   border: none;
 }
 
 .btn-secondary:hover {
-  background-color: rgb(56, 56, 56);
+  background-color: rgb(216, 216, 216);
 }
 
 .mobile-menu-actions {
   display: none;
 }
 
-/* Модальное окно */
 .modal {
   display: none;
   position: fixed;
